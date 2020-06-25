@@ -12,15 +12,15 @@ firewall-cmd --reload
 systemctl start httpd
 systemctl enable httpd
 systemctl status httpd
-rm -rf /var/www/html/sampledir
-mkdir -p /var/www/html/sampledir
-chown ec2-user:ec2-user /var/www/html/sampledir
-chmod -R o+r /var/www/html/sampledir
-git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/sampledir
+rm -rf /var/www/html/bmw
+mkdir -p /var/www/html/bmw
+chown ec2-user:ec2-user /var/www/html/bmw
+chmod -R o+r /var/www/html/bmw
+git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/bmw
 ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
-sed -i "s/ec2id/$ec2id/g" /var/www/html/sampledir/index.html
-sed -i "s/ec2ip/$ec2ip/g" /var/www/html/sampledir/index.html
+sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/bmw.html
+sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/bmw.html
 ```
 
 To run it from the command line directly:
@@ -32,13 +32,13 @@ sudo firewall-cmd --reload
 sudo systemctl start httpd
 sudo systemctl enable httpd
 sudo systemctl status httpd
-sudo rm -rf /var/www/html/sampledir
-sudo mkdir -p /var/www/html/sampledir
-sudo chown ec2-user:ec2-user /var/www/html/sampledir
-sudo chmod -R o+r /var/www/html/sampledir
-sudo git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/sampledir
+sudo rm -rf /var/www/html/bmw
+sudo mkdir -p /var/www/html/bmw
+sudo chown ec2-user:ec2-user /var/www/html/bmw
+sudo chmod -R o+r /var/www/html/bmw
+sudo git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/bmw
 ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
-sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/sampledir/index.html
-sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/sampledir/index.html
+sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/bmw.html
+sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/bmw.html
 ```
