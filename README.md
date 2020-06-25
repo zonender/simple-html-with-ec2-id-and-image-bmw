@@ -19,8 +19,8 @@ chmod -R o+r /var/www/html/bmw
 git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/bmw
 ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
-sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/bmw.html
-sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/bmw.html
+sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/index.html
+sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/index.html
 ```
 
 To run it from the command line directly:
@@ -39,6 +39,6 @@ sudo chmod -R o+r /var/www/html/bmw
 sudo git clone https://github.com/zonender/simple-html-with-ec2-id-and-image-bmw.git /var/www/html/bmw
 ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
-sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/bmw.html
-sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/bmw.html
+sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/index.html
+sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/index.html
 ```
