@@ -21,7 +21,7 @@ ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/index.html
 sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/index.html
-mv defaultindex.html /var/www/html/index.html
+mv /var/www/html/bmw/defaultindex.html /var/www/html/index.html
 sed -i "s/ec2id/$ec2id/g" /var/www/html/index.html
 sed -i "s/ec2ip/$ec2ip/g" /var/www/html/index.html
 ```
@@ -44,7 +44,7 @@ ec2id=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 ec2ip=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
 sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/bmw/index.html
 sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/bmw/index.html
-sudo mv defaultindex.html /var/www/html/index.html
+mv /var/www/html/bmw/defaultindex.html /var/www/html/index.html
 sudo sed -i "s/ec2id/$ec2id/g" /var/www/html/index.html
 sudo sed -i "s/ec2ip/$ec2ip/g" /var/www/html/index.html
 ```
